@@ -54,7 +54,7 @@ displayResult.innerText = `Here are the outcomes:
         Tails  ${tails}
         
         You lose!`;
-    }else if(heads == tails){
+    }else{
         displayResult.innerText +=`
 
 
