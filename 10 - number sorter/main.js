@@ -7,7 +7,7 @@ function numberSorter (unsortedList){
     const inputLength = unsortedList.length;
 
     for(let i=0; i<inputLength; i++){
-        let referenceNumber = Number.MAX_SAFE_INTEGER;
+        let referenceNumber = unsortedList[0];
         for(let n=0; n<unsortedList.length; n++){
             let currentNumber = unsortedList[n];
             if (currentNumber < referenceNumber){
@@ -15,8 +15,8 @@ function numberSorter (unsortedList){
             }
         }
         sortedList.push(referenceNumber);
-        const lowestNumberIndex = unsortedList.indexOf(referenceNumber);
-        unsortedList.splice(lowestNumberIndex, 1);
+        const referenceNumberIndex = unsortedList.indexOf(referenceNumber);
+        unsortedList.splice(referenceNumberIndex, 1);
     }
 
     return sortedList
