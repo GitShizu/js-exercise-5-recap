@@ -139,16 +139,13 @@ const gameSelection = prompt(`What game would you like to play?
 
     switch (gameSelection) {
         case "1":
-            displayResult.innerText +=`
-            ${selectedCoinFlipper()}`;
+            selectedCoinFlipper();
             break;
         case "2":
-            displayResult.innerText +=`
-            ${selectedDiceRoller()}`;
+            selectedDiceRoller();
             break;
         case "3":    
-            displayResult.innerText +=`
-            ${selectedRoulette()}`;
+            selectedRoulette();
             break; 
         default:
             alert("Whoops! Your input is not a valid one")       

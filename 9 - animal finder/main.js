@@ -2,42 +2,23 @@
 // BONUS: la funzione deve funzionare anche se l'utente scrive il nome tutto maiuscolo/tutto maiuscolo/un mix. Ci interessa solo che il nome dell'animale sia lo stesso.
 
 
-
+window.addEventListener('load', function(){    
 const animals = ["otter", "elephant", "hyena", "alligator", "meerkat", "capybara"]
-let outcome;
+const displayResult = document.getElementById('feedback');
 function animalFinder(inputString){
     
-    switch (inputString){
-        case "otter":
-            outcome = true;
+    for(let i=0; i<animals.length; i++) {
+        if(inputString === animals[i]){
+            displayResult.innerText = `Yes, we've got a bunch of those`;
             break;
-        case "elephant":
-            outcome = true;
-            break;
-        case "hyena":
-            outcome = true;
-            break;
-        case "alligator":
-            outcome = true;
-            break;
-        case "meerkat":
-            outcome = true;
-            break;
-        case "capybara":
-            outcome = true;
-            break;
-        default : false;
+        }else{
+            displayResult.innerText = `Nope, there are none of those`;
+        }
     }
-return outcome
 }
 
-window.addEventListener('load', function(){    
-    let displayResult = document.getElementById('feedback');
+
     const userInput = (prompt("What animal are you looking for?")).toLowerCase();
     animalFinder(userInput);
-    if(outcome === true){
-        displayResult.innerText = `Yes, we've got a bunch of those`
-    }else{
-        displayResult.innerText = `Nope, there are none of those`
-    }
+    
 })
